@@ -1,7 +1,7 @@
 <?php
 
 
-namespace wtf10029\Nestedset;
+namespace Wtf10029\Nestedset;
 
 
 use Hyperf\Database\Schema\Blueprint;

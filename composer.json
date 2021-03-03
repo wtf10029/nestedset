@@ -16,7 +16,7 @@
     },
     "extra": {
         "hyperf": {
-            "config": "wtf10029\\nestedset\\ConfigProvider"
+            "config": "Wtf10029\\Nestedset\\ConfigProvider"
         }
     },
     "minimum-stability": "dev",
