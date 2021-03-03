@@ -1,0 +1,27 @@
+{
+    "name": "wtf10029/nestedset",
+    "description": "nestedset",
+    "type": "library",
+    "license": "Apache",
+    "authors": [
+        {
+            "name": "wtf10029",
+            "email": "741321587@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Wtf10029\\Nestedset\\": "src/"
+        }
+    },
+    "extra": {
+        "hyperf": {
+            "config": "wtf10029\\nestedset\\ConfigProvider"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "hyperf/database": "~2.1.0",
+        "hyperf/event": "~2.1.0"
+    }
+}
