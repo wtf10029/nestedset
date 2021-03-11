@@ -43,30 +43,24 @@ trait NodeTrait
     /**
      * Sign on model events.
      */
-    public static function bootNodeTrait()
+    public static function onSaving($model)
     {
-//        static::saving(function ($model) {
-//            return $model->callPendingAction();
-//        });
-//
-//        static::deleting(function ($model) {
-//            // We will need fresh data to delete node safely
-//            $model->refreshNode();
-//        });
-//
-//        static::deleted(function ($model) {
-//            $model->deleteDescendants();
-//        });
-//
-//        if (static::usesSoftDelete()) {
-//            static::restoring(function ($model) {
-//                static::$deletedAt = $model->{$model->getDeletedAtColumn()};
-//            });
-//
-//            static::restored(function ($model) {
-//                $model->restoreDescendants(static::$deletedAt);
-//            });
-//        }
+        return $model->callPendingAction();
+    }
+
+    public static function onDeleted($model)
+    {
+        $model->refreshNode();
+    }
+
+    public static function onRestoring($model)
+    {
+        static::$deletedAt = $model->{$model->getDeletedAtColumn()};
+    }
+
+    public static function onRestored($model)
+    {
+        $model->restoreDescendants(static::$deletedAt);
     }
 
     /**
